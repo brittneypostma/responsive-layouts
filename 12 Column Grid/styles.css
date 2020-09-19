@@ -4,6 +4,7 @@
   --yellow: #fee440;
   --pink: #f15bb5;
   --purple: #340073;
+  --border-radius: 0.5em;
 }
 
 html {
@@ -21,6 +22,10 @@ body {
   font-weight: bold;
   color: var(--purple);
   text-align: center;
+}
+
+.br {
+  border-radius: var(--border-radius);
 }
 
 .container {

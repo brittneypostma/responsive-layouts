@@ -1,1 +1,2 @@
-# responsive-layouts
+# Responsive Layouts & Design
+

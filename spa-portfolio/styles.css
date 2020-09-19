@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto&display=swap');
+
+:root {
+  /* COLORS */
+  --black: #08131a;
+  --blue: #1ca0be;
+  --darkTeal: #08485c;
+  --gray: #4b6869;
+  --lightBlue: #a5dee0;
+  --seafoam: #78fade;
+  --red: #f14c4c;
+  --teal: #01779b;
+  --white: #d3f3fc;
+  --yellow: #f7f593;
+
+  /* FONT SIZES */
+  --baseText: 2rem; /* 16px */
+  --smallText: 0.618rem; /* 9.89px */
+  --subheading: 1.618rem; /* 25.89px */
+  --headingText: 2.618rem; /* 41.89px*/
+
+  /* FONTS */
+  --headingFont: 'Archivo Black', sans-serif;
+  --bodyFont: 'Roboto', sans-serif;
+
+  /* DESIGN */
+  --bgColor: var(--white);
+  --textColor: var(--darkTeal);
+}
+
+/* @media (prefers-color-scheme: light) {
+  body {
+    background: var(--white);
+    color: var(--darkTeal);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--black);
+    color: var(--teal);
+  }
+} */
+
+html {
+  height: 100%;
+  font-size: 62.5%; /* 8px dynamic for accessibility */
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  font-family: var(--bodyFont);
+  font-size: var(--baseText);
+  background: var(--bgColor);
+  color: var(--textColor);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--headingFont);
+}
