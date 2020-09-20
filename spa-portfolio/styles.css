@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto&display=swap');
 
+/* * allows width and height values to apply to content, padding, and border. */
 *,
 ::before,
 ::after {
@@ -7,7 +8,7 @@
 }
 
 :root {
-  /* COLORS */
+  /** COLORS */
   --black: #08131a;
   --blue: #1ca0be;
   --darkTeal: #08485c;
@@ -19,24 +20,23 @@
   --white: #d3f3fc;
   --yellow: #f7f593;
 
-  /* FONT SIZES */
-  --baseText: 2rem; /* 16px */
+  /* *FONT SIZES */
   --smallText: 0.618rem; /* 9.89px */
   --subheading: 1.618rem; /* 25.89px */
   --headingText: 2.618rem; /* 41.89px*/
+  --xlText: 4.236rem; /* 67.77px */
 
-  /* FONTS */
+  /** FONTS */
   --headingFont: 'Archivo Black', sans-serif;
   --bodyFont: 'Roboto', sans-serif;
 
-  /* DESIGN */
+  /** DESIGN */
   --bgColor: var(--white);
   --textColor: var(--darkTeal);
 }
 
 html {
   height: 100%;
-  font-size: 133.5%;
   scroll-behavior: smooth;
 }
 
@@ -45,7 +45,6 @@ body {
   height: 100%;
   width: 100%;
   font-family: var(--bodyFont);
-  font-size: var(--baseText);
   background: var(--bgColor);
   color: var(--textColor);
 }
@@ -60,25 +59,16 @@ h6 {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: var(--xlText);
 }
 h2 {
-  font-size: 1.5rem;
+  font-size: var(--headingText);
 }
 h3 {
-  font-size: 1.17rem;
-}
-h4 {
-  font-size: 1rem;
-}
-h5 {
-  font-size: 0.83rem;
-}
-h6 {
-  font-size: 0.67rem;
+  font-size: var(--subheading);
 }
 
-/* Keep h1 margins consistent, even when nested */
+/** Keep h1 margins consistent, even when nested */
 h1 {
   margin: 0.67em 0;
 }
@@ -94,6 +84,7 @@ svg {
   height: auto;
 }
 
+/** Reduce animation if preferred in browser settings */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
