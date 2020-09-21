@@ -29,6 +29,8 @@
   /** FONTS */
   --headingFont: 'Archivo Black', sans-serif;
   --bodyFont: 'Roboto', sans-serif;
+
+  --headerHeight: 4rem;
 }
 
 html {
@@ -56,21 +58,17 @@ h4,
 h5,
 h6 {
   font-family: var(--headingFont);
+  margin: 0;
 }
 
 h1 {
-  font-size: var(--xlText);
+  font-size: var(--headingText);
 }
 h2 {
-  font-size: var(--headingText);
+  font-size: var(--subheading);
 }
 h3 {
   font-size: var(--subheading);
-}
-
-/** Keep h1 margins consistent, even when nested */
-h1 {
-  margin: 0.67em 0;
 }
 
 img,
@@ -82,6 +80,28 @@ svg {
 img,
 svg {
   height: auto;
+}
+
+button {
+  height: 40px;
+  padding: 0 3em;
+  border-radius: 40px;
+  background: var(--accent);
+  font-weight: bold;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+button:focus {
+  box-shadow: 0 0 0 3px var(--teal);
+}
+
+button:hover {
+  filter: brightness(10);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
 /** Reduce animation if preferred in browser settings */
@@ -98,12 +118,14 @@ header {
   background-color: var(--black);
   box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
   position: sticky;
+  top: 0;
+  height: var(--headerHeight);
   width: 100%;
   z-index: 3;
   display: flex;
   justify-content: space-between;
   color: var(--accent);
-  padding: 1em;
+  padding: 1rem;
 }
 
 .logo {
@@ -179,12 +201,26 @@ header {
 }
 
 .hero {
-  background: var(--white) url(./images/bg.jpg) no-repeat fixed center;
-  background-size: cover;
-  height: 100vh;
+  background: var(--white) url(./images/bg.jpg) no-repeat fixed center / cover;
+  height: calc(100vh - var(--headerHeight));
+  display: grid;
+  place-content: center;
+  color: var(--white);
+}
+
+.hero h1,
+h2 {
+  margin-bottom: 0.5rem;
+}
+
+.hero h1 {
+  color: var(--accent);
+}
+
+.hero a {
+  margin: 0 auto;
 }
 
 .services {
   background: var(--teal);
-  height: 100vh;
 }
