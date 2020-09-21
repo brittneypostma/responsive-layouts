@@ -9,31 +9,32 @@
   <body>
     <div class="container">
       <!-- NAVIGATION -->
-      <nav role="navigation">
+      <header>
         <!-- Logo -->
         <div class="logo">ZTM</div>
-        <div id="menuToggle">
+        <div class="menu-container">
           <!--
-              A fake / hidden checkbox so you can use the :checked selector on it.
+              A hidden checkbox, so you can use the :checked selector on it.
           -->
-          <label for="toggle-menu">
-          <input type="checkbox" id="toggle-menu"/>
+          <input type="checkbox" id="toggle" aria-hidden="true" />
 
           <!-- Hamburger Menu styled in CSS -->
-          <label class="icon" for="menu-btn">
+          <label for="toggle" class="menu-icon" aria-hidden="true">
+            Open the menu
             <span></span>
           </label>
 
           <!-- Nav Links -->
-          <ul class="menu">
-            <a href="#"><li>Home</li></a>
-            <a href="#"><li>Services</li></a>
-            <a href="#"><li>Work</li></a>
-            <a href="#"><li>Contact</li></a>
-          </ul>
+          <nav role="navigation">
+            <ul class="menu">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Work</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
         </div>
-      </nav>
-
+      </header>
       <!-- Main Content -->
       <main class="main">
         <div class="hero">
