@@ -14,7 +14,7 @@
   --darkTeal: #08485c;
   --gray: #4b6869;
   --lightBlue: #a5dee0;
-  --seafoam: #78fade;
+  --accent: #78fade;
   --red: #f14c4c;
   --teal: #01779b;
   --white: #d3f3fc;
@@ -94,6 +94,61 @@ svg {
   }
 }
 
+nav {
+  background-color: var(--black);
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+  position: sticky;
+  width: 100%;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  color: var(--accent);
+  padding: 1em;
+}
+
+.logo {
+  font-family: var(--headingFont);
+  font-size: var(--subheading);
+}
+
+/** Hamburger Menu */
+.icon {
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+}
+
+.icon > span {
+  background: var(--white);
+  border-radius: 8px;
+  height: 3px;
+  width: 1.5em;
+  display: block;
+  position: relative;
+  transition: background 0.1s ease-out;
+  transform: scaleX(-1);
+}
+
+.icon > span:before,
+.icon > span:after {
+  background: var(--white);
+  border-radius: 8px;
+  height: 100%;
+  width: 2em;
+  content: '';
+  display: block;
+  position: absolute;
+  transition: background 0.1s ease-out;
+}
+
+.icon > span:before {
+  top: -10px;
+}
+
+.icon > span:after {
+  top: 10px;
+}
+
 .hero {
   background: var(--white) url(./images/bg.jpg) no-repeat fixed center;
   background-size: cover;
@@ -103,139 +158,4 @@ svg {
 .services {
   background: var(--teal);
   height: 100vh;
-}
-
-/*
- * Made by Erik Terwan
- * 24th of November 2015
- * MIT License
-*/
-
-#menuToggle {
-  display: block;
-  position: relative;
-  top: 50px;
-  left: 50px;
-
-  z-index: 1;
-
-  -webkit-user-select: none;
-  user-select: none;
-}
-
-#menuToggle a {
-  text-decoration: none;
-  color: #232323;
-
-  transition: color 0.3s ease;
-}
-
-#menuToggle a:hover {
-  color: tomato;
-}
-
-#menuToggle input {
-  display: block;
-  width: 40px;
-  height: 32px;
-  position: absolute;
-  top: -7px;
-  left: -5px;
-
-  cursor: pointer;
-
-  opacity: 0; /* hide this */
-  z-index: 2; /* and place it over the hamburger */
-
-  -webkit-touch-callout: none;
-}
-
-/*
- * Just a quick hamburger
- */
-#menuToggle span {
-  display: block;
-  width: 33px;
-  height: 4px;
-  margin-bottom: 5px;
-  position: relative;
-
-  background: var(--darkTeal);
-  border-radius: 3px;
-
-  z-index: 1;
-
-  transform-origin: 4px 0px;
-
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
-    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
-}
-
-#menuToggle span:first-child {
-  transform-origin: 0% 0%;
-}
-
-#menuToggle span:nth-last-child(2) {
-  transform-origin: 0% 100%;
-}
-
-#menuToggle span:nth-child(3) {
-  width: 25px;
-}
-/* 
- * Transform all the slices of hamburger
- * into a crossmark.
- */
-#menuToggle input:checked ~ span {
-  opacity: 1;
-  transform: rotate(45deg) translate(-2px, -1px);
-}
-
-/*
- * But let's hide the middle one.
- */
-#menuToggle input:checked ~ span:nth-last-child(3) {
-  opacity: 0;
-  transform: rotate(0deg) scale(0.2, 0.2);
-}
-
-/*
- * Oh yeah and the last one should go the other direction
- */
-#menuToggle input:checked ~ span:nth-last-child(2) {
-  transform: rotate(-45deg) translate(0, -1px);
-}
-
-/*
- * Make this absolute positioned
- * at the top left of the screen
- */
-#menu {
-  position: absolute;
-  width: 300px;
-  margin: -100px 0 0 -50px;
-  padding: 50px;
-  padding-top: 125px;
-
-  background: var(--white);
-  list-style-type: none;
-  -webkit-font-smoothing: antialiased;
-  /* to stop flickering of text in safari */
-
-  transform-origin: 0% 0%;
-  transform: translate(-100%, 0);
-
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-}
-
-#menu li {
-  padding: 10px 0;
-  font-size: 22px;
-}
-
-/*
- * And let's slide it in from the left
- */
-#menuToggle input:checked ~ ul {
-  transform: none;
 }
