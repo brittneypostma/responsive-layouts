@@ -82,28 +82,6 @@ svg {
   height: auto;
 }
 
-button {
-  height: 40px;
-  padding: 0 3em;
-  border-radius: 40px;
-  background: var(--accent);
-  font-weight: bold;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
-
-button:focus {
-  box-shadow: 0 0 0 3px var(--teal);
-}
-
-button:hover {
-  filter: brightness(10);
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-}
-
 /** Reduce animation if preferred in browser settings */
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -127,20 +105,120 @@ header {
   color: var(--accent);
   padding: 1rem;
 }
-
+@media (min-width: 900px) {
+  header {
+    align-items: center;
+  }
+}
 .logo {
   font-family: var(--headingFont);
   font-size: var(--subheading);
 }
 
-/** Hamburger Container */
-
-/** Hamburger Icon */
-.icon {
-  cursor: pointer;
+/** NAVIGATION */
+/* container div */
+.menu-container {
+  padding-top: 35px;
   position: relative;
-  user-select: none;
 }
+
+@media (min-width: 900px) {
+  .menu-container {
+    padding-top: 0;
+  }
+}
+
+/* ul - dropdown menu */
+
+.menu {
+  position: absolute;
+  width: 300px;
+  padding: 0;
+  top: 25px;
+  left: 25px;
+  overflow: hidden;
+  max-height: 1px;
+  list-style: none;
+  padding: 0;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform: translate(-100%, 0);
+  transform-origin: 0% 0%;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+@media (min-width: 900px) {
+  .menu {
+    max-height: none;
+    text-align: center;
+  }
+}
+
+/* links */
+
+.nav-link {
+  padding: 0;
+  margin: 0;
+  background: #fff;
+}
+
+@media (min-width: 900px) {
+  .nav-link {
+    display: inline-block;
+  }
+}
+
+.nav-link a {
+  display: grid;
+  padding: 1em 3em;
+  background: var(--darkTeal);
+  text-decoration: none;
+  transition: opacity 0.5s ease;
+}
+
+@media (min-width: 900px) {
+  .nav-link a {
+    background: var(--black);
+    padding-top: 0;
+    padding-bottom: 0;
+    border: none;
+  }
+}
+
+.nav-link a:link,
+.nav-link a:visited {
+  color: var(--white);
+}
+
+.nav-link a:hover,
+.nav-link a:focus {
+  text-decoration: none;
+  opacity: 0.7;
+}
+
+/* label - icon container*/
+
+.icon {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  text-indent: -9999px;
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.icon:focus {
+  outline: none;
+}
+
+@media (min-width: 900px) {
+  .icon {
+    display: none;
+  }
+}
+
+/* Create Hamburger Icon */
 
 .icon > span {
   background: var(--white);
@@ -173,32 +251,49 @@ header {
   top: 10px;
 }
 
-#checkbox,
-.menu {
+/* hide default checkbox */
+
+/* input[type='checkbox'] {
   display: none;
+  visibility: hidden;
+} */
+
+.menu-container input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  opacity: 0; /* hide this */
+  z-index: 10; /* and place it over the hamburger */
+
+  -webkit-touch-callout: none;
 }
 
-#checkbox:checked,
-.menu {
-  max-height: 40vh;
+/* if checkbox is checked, show menu */
+
+input[type='checkbox']:checked ~ nav .menu {
+  height: auto;
+  max-height: 30rem;
+  transition: all 2s cubic-bezier(0.5, 1, 0.22, 1);
 }
 
-#checkbox:checked,
-.icon span {
+/** Make the X */
+/* Hide first line */
+input[type='checkbox']:checked + .icon span {
   background: transparent;
 }
-
-#checkbox:checked,
-.icon span:before {
+/* rotate 2nd line */
+input[type='checkbox']:checked + .icon span:before {
   transform: rotate(-45deg);
   top: 0;
 }
-
-#checkbox:checked,
-.icon span:after {
+/* rotate 3rd line opposite way */
+input[type='checkbox']:checked + .icon span:after {
   transform: rotate(45deg);
   top: 0;
 }
+
+/** Hero Section */
 
 .hero {
   background: var(--white) url(./images/bg.jpg) no-repeat fixed center / cover;
@@ -208,17 +303,48 @@ header {
   color: var(--white);
 }
 
-.hero h1,
+.headline {
+  padding: 0 2em;
+  width: 100%;
+}
+
+.headline h1,
 h2 {
   margin-bottom: 0.5rem;
 }
 
-.hero h1 {
+.headline h1 {
   color: var(--accent);
 }
 
-.hero a {
+a {
+  text-decoration: none;
+  color: var(--black);
+  display: inline-block;
+  text-align: center;
+}
+
+.headline a {
   margin: 0 auto;
+  padding: 0.75rem 3rem;
+  border-radius: 40px;
+  background: var(--accent);
+  font-weight: bold;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: 0.1s all linear;
+}
+
+.headline a:focus {
+  box-shadow: 0 0 0 3px var(--darkTeal);
+}
+
+.headline a:hover {
+  filter: brightness(1.2);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
 .services {
