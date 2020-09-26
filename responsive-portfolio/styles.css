@@ -3,8 +3,8 @@
 /******* Variables *******/
 :root {
   /* COLORS */
-  --bg: #d3f3fc;
-  --text: #08485c;
+  --light: #d3f3fc;
+  --dark: #08485c;
   --accent: #78fade;
   --focus: #f7f593;
   --shadow: rgba(37, 37, 37, 0.3);
@@ -49,8 +49,8 @@ ul {
 /******* STYLES *******/
 body {
   font-family: var(--body);
-  background: var(--bg);
-  color: var(--text);
+  background: var(--light);
+  color: var(--dark);
 }
 
 h1,
@@ -62,7 +62,28 @@ h6 {
   font-family: var(--heading);
 }
 
+nav {
+  position: fixed;
+  bottom: 0;
+  background: var(--dark);
+  width: 100%;
+  padding: 1rem;
+}
+
+nav ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+}
+
+nav a {
+  color: var(--light);
+}
+
 /******* RESPONSIVE *******/
 
 @media screen and (min-width: 960px) {
+  nav {
+    position: relative;
+  }
 }
