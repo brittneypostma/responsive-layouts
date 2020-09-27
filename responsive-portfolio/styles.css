@@ -25,14 +25,13 @@
   margin: 0;
   padding: 0;
   border: none;
-  font-size: 100%;
   font: inherit;
   vertical-align: baseline;
 }
 
 html,
 body {
-  font-size: 1rem;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
   line-height: 1.5;
   height: 100%;
   scroll-behavior: smooth;
@@ -59,10 +58,6 @@ h6 {
 
 a {
   text-decoration: none;
-}
-
-a:visited {
-  color: inherit;
 }
 
 img,
@@ -96,6 +91,14 @@ li {
   place-items: center;
 }
 
+.items-center {
+  justify-items: center;
+}
+
+.content-center {
+  justify-content: center;
+}
+
 .wrapper {
   max-width: 960px;
   padding: 0 1rem;
@@ -118,6 +121,9 @@ h6 {
 }
 
 header {
+  width: 100%;
+  position: fixed;
+  top: 0;
   background: var(--dark);
   color: var(--accent);
 }
@@ -152,7 +158,6 @@ nav a:hover {
   border-bottom: 2px solid var(--accent);
 }
 /******* MAIN *******/
-
 /* Hero */
 .hero {
   background: var(--light) url(./images/bg.jpg) no-repeat fixed center / cover;
@@ -189,6 +194,23 @@ input[type='submit']:focus {
 }
 
 /* Skills */
+.skills {
+  margin: 2rem auto;
+  gap: 2rem;
+}
+
+.devices {
+  justify-self: center;
+}
+
+div.circle:nth-child(1) {
+  justify-self: start;
+}
+
+div.circle:nth-child(3) {
+  justify-self: end;
+}
+
 .circle {
   width: 100px;
   height: 100px;
@@ -198,9 +220,71 @@ input[type='submit']:focus {
   place-items: center;
 }
 
+/* Portfolio */
+.portfolio {
+  background: var(--dark);
+  color: var(--light);
+  padding: 1.5rem 0;
+}
+
+.projects img {
+  width: 100%;
+  height: auto;
+}
+
+.projects {
+  grid-template: repeat(3, 1fr) / repeat(8, 1fr);
+}
+
+.projects > img:nth-child(1) {
+  grid-column: 1 / 6;
+  grid-row: 1 / 3;
+}
+
+.projects > img:nth-child(2) {
+  grid-column: 6 / -1;
+  grid-row: 1 / 2;
+}
+
+.projects > img:nth-child(3) {
+  grid-column: 6 / -1;
+  grid-row: 2 / 3;
+}
+
+.projects > img:nth-child(4) {
+  grid-column: 1 / 5;
+}
+
+.projects > img:nth-child(5) {
+  grid-column: 5 / -1;
+}
+
+/* Contact */
+
+.contact h2 {
+  margin: 1.5rem auto;
+}
+
+.contact form {
+  gap: 0.25rem;
+  font-size: 1rem;
+}
+
+input[type='text'],
+input[type='email'],
+textarea {
+  border-radius: 0.25rem;
+}
+
+.contact img {
+  justify-self: center;
+  grid-row: 1;
+}
+
 /******* Footer *******/
 footer {
   background: var(--dark);
+  margin-top: 1.5rem;
 }
 
 .footer {
@@ -221,14 +305,14 @@ footer {
 /******* RESPONSIVE *******/
 
 @media screen and (min-width: 960px) {
-  :root {
-    font-size: 1.25rem;
-  }
   .navbar {
     display: flex;
   }
   .wrapper {
-    padding: 0;
     margin: 0 auto;
+  }
+
+  .contact img {
+    grid-column: 2 / -1;
   }
 }

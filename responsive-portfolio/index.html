@@ -30,12 +30,16 @@
         </div>
       </section>
       <!-- ******* SKILLS ******* -->
-      <section class="skills">
+      <section>
         <div class="wrapper">
           <h2>Skills</h2>
-          <div class="grid">
-            <img src="images/responsive.png" alt="responsive devices" />
-            <div class="grid auto-fit">
+          <div class="grid skills">
+            <img
+              src="images/responsive.png"
+              alt="responsive devices"
+              class="devices"
+            />
+            <div class="grid auto-fit items-center">
               <div class="circle">
                 <img src="images/laptop.png" alt="developer" />
               </div>
@@ -53,22 +57,12 @@
       <section class="portfolio">
         <div class="wrapper">
           <h2>Portfolio</h2>
-          <div class="grid">
-            <a href=""
-              ><img src="images/grid-img-1.jpg" alt="portfolio image"
-            /></a>
-            <a href=""
-              ><img src="images/grid-img-2.jpg" alt="portfolio image"
-            /></a>
-            <a href=""
-              ><img src="images/grid-img-3.jpg" alt="portfolio image"
-            /></a>
-            <a href=""
-              ><img src="images/grid-img-4.jpg" alt="portfolio image"
-            /></a>
-            <a href=""
-              ><img src="images/grid-img-5.jpg" alt="portfolio image"
-            /></a>
+          <div class="grid projects">
+            <img src="images/grid-img-1.jpg" alt="portfolio image" />
+            <img src="images/grid-img-2.jpg" alt="portfolio image" />
+            <img src="images/grid-img-3.jpg" alt="portfolio image" />
+            <img src="images/grid-img-4.jpg" alt="portfolio image" />
+            <img src="images/grid-img-5.jpg" alt="portfolio image" />
           </div>
         </div>
       </section>
@@ -76,11 +70,14 @@
       <section class="contact">
         <div class="wrapper">
           <h2>Get in touch</h2>
-          <div class="grid auto-fit">
+          <div class="grid">
             <form class="grid">
-              <input type="text" />
-              <input type="email" />
-              <textarea name="message" id="" cols="30" rows="10"></textarea>
+              <label for="name">Name</label>
+              <input type="text" id="name" />
+              <label for="email">Email</label>
+              <input type="email" id="email" />
+              <label for="message">Message</label>
+              <textarea name="message" id="message"></textarea>
               <input type="submit" />
             </form>
             <img src="images/mail.png" alt="mail icon" />
