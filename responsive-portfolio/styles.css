@@ -166,13 +166,26 @@ nav a:hover {
   color: var(--accent);
 }
 
-.headline a {
+.headline a,
+input[type='submit'] {
   color: var(--dark);
   background: var(--accent);
   padding: 0.5rem 2rem;
   border-radius: 2rem;
   margin-top: 0.5rem;
   display: inline-block;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.headline a:hover,
+input[type='submit']:hover {
+  filter: brightness(0.9);
+}
+
+.headline a:focus,
+input[type='submit']:focus {
+  box-shadow: 0 0 0 3px var(--focus);
 }
 
 /* Skills */
@@ -208,6 +221,9 @@ footer {
 /******* RESPONSIVE *******/
 
 @media screen and (min-width: 960px) {
+  :root {
+    font-size: 1.25rem;
+  }
   .navbar {
     display: flex;
   }
