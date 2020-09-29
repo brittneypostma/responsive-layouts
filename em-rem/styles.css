@@ -1,11 +1,16 @@
 body {
-  background: lightblue;
-  color: #333;
+  background: rgb(200, 242, 248);
+  color: rgb(23, 58, 66, 0.85);
   font-family: sans-serif;
   margin: 0;
   padding: 1rem;
   text-align: center;
   font-size: clamp(1.25rem, 2vw, 1.5rem);
+}
+
+body p {
+  padding-bottom: 2.5rem;
+  border-bottom: 2px solid rgb(23, 58, 66, 0.85);
 }
 
 h1,
