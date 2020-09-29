@@ -1,0 +1,31 @@
+body {
+  background: lightblue;
+  color: #333;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+}
+
+h1,
+h2 {
+  font-size: clamp(2rem, 3vw, 5rem);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2.5rem;
+}
+
+.grid p,
+.grid ul {
+  text-align: left;
+}
+
+@media only screen and (min-width: 600px) {
+  body {
+    padding: 5rem;
+  }
+}
