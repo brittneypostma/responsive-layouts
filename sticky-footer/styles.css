@@ -29,42 +29,17 @@ body {
 body {
   color: var(--white);
   display: grid;
-  gap: 1rem;
   grid-template-rows: auto 1fr auto;
+  gap: 1rem;
 }
 
 header,
 footer {
+  padding: 1rem;
   background: var(--green);
 }
 
-aside,
 main {
+  padding: 1rem;
   background: var(--pink);
-}
-
-.main-wrapper {
-  display: grid;
-  gap: 1rem;
-}
-
-@media only screen and (min-width: 768px) {
-  .main-wrapper {
-    grid-template: 1fr minmax(150px, 25%) / 1fr 1fr;
-  }
-
-  main {
-    grid-area: 1 / 1 / 2 / -1;
-    /* grid-row-start / grid-column-start / grid-row-end / grid-column-end */
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  .main-wrapper {
-    grid-template-columns: minmax(150px, 25%) 1fr minmax(150px, 25%);
-    grid-template-rows: auto;
-  }
-  main {
-    grid-column: 2/3;
-  }
 }

@@ -1,0 +1,80 @@
+:root {
+  --green: #81c341;
+  --blue: #00bbf9;
+  --yellow: #fee440;
+  --pink: #f15bb5;
+  --purple: #7200fd;
+  --black: #373737;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  font: inherit;
+  vertical-align: baseline;
+  list-style: none;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  line-height: 1.5;
+  min-height: 100%;
+  font-family: 'Roboto', sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+.flex-container,
+.grid-container {
+  border: 1rem solid black;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.box {
+  width: 400px;
+  height: 20vh;
+}
+
+.one {
+  background: var(--green);
+}
+
+.two {
+  background: var(--purple);
+}
+
+.three {
+  background: var(--yellow);
+}
+
+.four {
+  background: var(--blue);
+}
+
+.five {
+  background: var(--pink);
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.flex li {
+  flex: 400px 400px 400px;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(400px, auto));
+  justify-content: center;
+}

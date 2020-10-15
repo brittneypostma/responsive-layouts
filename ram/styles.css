@@ -1,0 +1,48 @@
+:root {
+  --green: #78b63c;
+  --pink: #e30e76;
+  --white: #f4fbf1;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  font: inherit;
+  list-style: none;
+  text-decoration: none;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  line-height: 1.5;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+.container {
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.card {
+  display: grid;
+  place-items: center;
+  min-height: 300px;
+}
+
+.card:nth-child(odd) {
+  background: var(--green);
+}
+
+.card:nth-child(even) {
+  background: var(--pink);
+}

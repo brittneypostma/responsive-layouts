@@ -1,0 +1,50 @@
+:root {
+  --green: #78b63c;
+  --pink: #e30e76;
+  --white: #f4fbf1;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  font: inherit;
+  list-style: none;
+  text-decoration: none;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  line-height: 1.5;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+.one,
+.three {
+  background: var(--green);
+}
+
+.two {
+  background: var(--pink);
+}
+
+.container {
+  color: var(--white);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  height: 100vh;
+}
+
+.box {
+  height: auto;
+  flex: 0 1 300px;
+}
