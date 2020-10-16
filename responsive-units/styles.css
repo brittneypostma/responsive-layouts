@@ -28,7 +28,6 @@ body {
 body {
   display: grid;
   gap: 1rem;
-  place-items: center;
 }
 
 h2 {

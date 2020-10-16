@@ -1,0 +1,54 @@
+:root {
+  --green: #78b63c;
+  --pink: #e30e76;
+  --white: #f4fbf1;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  list-style: none;
+  text-decoration: none;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  line-height: 1.5;
+  min-height: 100%;
+  font-family: 'Roboto', sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+header,
+footer {
+  text-align: center;
+  color: var(--white);
+  background: var(--green);
+  padding: 1rem;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr min(65ch, 100%) 1fr;
+}
+
+main > * {
+  padding: 1rem;
+  background: var(--pink);
+  color: var(--white);
+  grid-column: 2;
+}
+
+.full-bleed {
+  width: 100%;
+  max-width: 2400px;
+  grid-column: 1/-1;
+  padding: 0;
+  margin: 0 auto;
+}
