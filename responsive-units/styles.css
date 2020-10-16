@@ -1,7 +1,6 @@
 :root {
   --green: #78b63c;
   --pink: #e30e76;
-  --white: #f4fbf1;
 }
 
 *,
@@ -28,35 +27,51 @@ body {
 
 body {
   display: grid;
-  grid-template: auto auto / auto auto;
   gap: 1rem;
+  place-items: center;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.card {
   padding: 1rem;
-}
-
-article {
-  border: 1rem solid black;
-  padding: 1rem;
-}
-
-section:nth-child(odd) {
-  background: var(--green);
-}
-
-section:nth-child(even) {
-  background: var(--pink);
-}
-
-.box {
-  width: 200px;
-  height: 200px;
-}
-
-.fit {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  justify-content: space-between;
+  border-radius: 0.25rem;
 }
 
-.fill {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+.vw {
+  font-size: 1vw;
+}
+
+.vh {
+  font-size: 2vh;
+}
+
+.ch {
+  font-size: 2ch;
+}
+
+.ex {
+  font-size: 2ex;
+}
+
+.em {
+  font-size: 1.5em;
+}
+
+.em > p {
+  font-size: 1em;
+}
+
+.rem {
+  font-size: 1.5rem;
+}
+
+.rem > p {
+  font-size: 1rem;
 }
