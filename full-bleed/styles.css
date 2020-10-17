@@ -47,7 +47,7 @@ main > * {
 
 .full-bleed {
   width: 100%;
-  max-width: 2400px;
+  max-width: 2560px;
   grid-column: 1/-1;
   padding: 0;
   margin: 0 auto;
