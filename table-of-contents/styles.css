@@ -1,0 +1,202 @@
+/* Reset, import, and variables */
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+:root {
+  --green: #78b63c;
+  --pink: #e30e76;
+  --white: #f4fbf1;
+  --gray: #efefef;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  list-style: none;
+  text-decoration: none;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  line-height: 1.5;
+  min-height: 100%;
+  font-family: 'Raleway', 'HelveticaNeue', 'Helvetica Neue', 'Helvetica',
+    'Arial', sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+/* The main CSS */
+
+body {
+  max-width: 1256px;
+  margin: 0 auto;
+  display: grid;
+  /* 
+  By default a grid item cannot be smaller than the size of its content
+  they initially have min-width: auto; and min-height: auto
+  to fix, 
+  grid-template-columns: minmax(0, 1fr); on the parent 
+  or 
+  min-width: 0 on the container
+ */
+  grid-template-columns: minmax(0, 1fr);
+  grid-row-gap: 1rem;
+  grid-template-areas:
+    'header'
+    'toc'
+    'article'
+    'footer';
+}
+
+body > * {
+  padding: 1rem;
+}
+
+header {
+  grid-area: header;
+  border-bottom: 1px dashed var(--gray);
+}
+
+.content {
+  display: contents;
+}
+
+#toc {
+  margin: 0 1rem;
+  grid-area: toc;
+}
+
+main {
+  /*  either min-width here or grid-template-columns on the parent  */
+  /*   min-width: 0; */
+  padding: 1rem;
+  grid-area: article;
+}
+
+footer {
+  grid-area: footer;
+  background: var(--gray);
+  padding: 1rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  place-content: center;
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 768px) {
+  body {
+    grid-template-columns: 316px minmax(0, 1fr);
+    grid-template-areas:
+      'toc header'
+      'toc article'
+      'footer footer';
+  }
+  #toc {
+    margin: 0 0 1rem 0;
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    top: 0;
+  }
+}
+
+/* Just Styles */
+a {
+  position: relative;
+  color: var(--pink);
+}
+
+a:hover {
+  color: var(--green);
+}
+
+a:before {
+  content: '';
+  position: absolute;
+  transition: transform 0.3s ease;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--pink);
+  transform: scaleX(0);
+}
+
+a:hover::before {
+  transform: scaleX(1);
+}
+
+li > ul {
+  padding-left: 1rem;
+}
+
+#toc {
+  background: var(--gray);
+  padding: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 2.5rem 0 1rem;
+  font-weight: 300;
+  letter-spacing: -0.1rem;
+}
+
+h1 {
+  line-height: 1.2;
+  font-size: clamp(2rem, 2rem + 1vw, 3rem);
+}
+
+h2 {
+  line-height: 1.25;
+  font-size: clamp(1.5rem, 1.5rem + 1vw, 2.5rem);
+}
+
+h3 {
+  line-height: 1.3;
+  font-size: clamp(1.25rem, 1.25rem + 0.75vw, 2.25rem);
+}
+
+h4 {
+  letter-spacing: 0;
+  font-size: clamp(1.15rem, 1.15rem + 0.75vw, 2rem);
+}
+
+.fa {
+  transition: color 0.3s ease;
+}
+
+footer a:hover .fa:hover {
+  color: var(--green);
+}
+
+footer a:hover::before {
+  transform: scaleX(0);
+}
+
+pre {
+  background: var(--gray);
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  white-space: pre;
+  word-wrap: break-word;
+  overflow: auto;
+  max-width: 100%;
+  scrollbar-color: var(--green) var(--gray);
+  scrollbar-width: thin;
+  font-family: 'Inconsolata', 'Monaco', 'Consolas', 'Andale Mono',
+    'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;
+  font-size: 0.75rem;
+  color: black;
+}

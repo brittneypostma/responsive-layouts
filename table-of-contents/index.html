@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table of Contents</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>CSS Cheat Sheet</h1>
+      <p style="font-size: 0.75rem;">
+        These are my notes while taking the
+        <a
+          href="https://academy.zerotomastery.io/p/complete-web-developer-zero-to-mastery?affcode=441520_gjue7n-1"
+          >The Complete Web Developer Zero to Mastery</a
+        >
+        course by Andrei Neagoie on ZTM Academy. Find more of my notes at
+        <a href="https://console-logs.netlify.app/">Console Logs</a>, my digital
+        garden.
+      </p>
+    </header>
+    <div class="content">
+      <aside id="toc">
+        <h2>Table of Contents</h2>
+
+        <ul>
+          <li>
+            <p><a href="#identify-elements">Identify Elements</a></p>
+            <ul>
+              <li><a href="#element-names">Element Names</a></li>
+              <li><a href="#class-selector">Class Selector</a></li>
+              <li><a href="#id-selector">ID Selector</a></li>
+            </ul>
+          </li>
+          <li>
+            <p><a href="#selectors">Selectors</a></p>
+          </li>
+          <li>
+            <p><a href="#specificity">Specificity</a></p>
+          </li>
+          <li>
+            <p><a href="#css-grid-vs-flexbox">CSS Grid vs Flexbox</a></p>
+          </li>
+          <li>
+            <p><a href="#resources">Resources</a></p>
+            <ul>
+              <li><a href="#flexbox">Flexbox</a></li>
+              <li><a href="#grid">Grid</a></li>
+            </ul>
+          </li>
+        </ul>
+      </aside>
+
+      <main>
+        <p>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">MDN CSS</a
+          ><br />
+          <a href="https://css-tricks.com/">CSS Tricks</a>
+        </p>
+        <p>
+          CSS, Cascading Style Sheet, is used to describe how elements should be
+          rendered to users.
+        </p>
+        <p>
+          CSS can be implemented in several ways. Inline styling, inside the
+          style tag of an HTML document, or in an external stylesheet.
+        </p>
+        <hr />
+        <h2 id="identify-elements">Identify Elements</h2>
+        <p>
+          There are multiple ways to tell the browser how to "find" the elements
+          you want to style.
+        </p>
+        <p>Here are some examples.</p>
+        <h3 id="element-names">Element Names</h3>
+        <p>
+          Just using an HTML elements tag name is one of the simplest ways to
+          add styling to an element. An example is:
+        </p>
+        <pre><code>  div {
+  /*styles for all div tags go here*/
+  }
+  p {
+  /*styles for paragraph tags go here*/
+  }
+</code></pre>
+        <h3 id="class-selector">Class Selector</h3>
+        <p>
+          Classes are probably the most common selector given to elements,
+          because they are reusable.<br />
+          You can have one css style for a certain class and give it to as many
+          elements as you want.
+        </p>
+        <pre><code>&lt;div class="my-div"&gt;Style the div tag by applying the class "my-div" to it.&lt;/div&gt;
+</code></pre>
+        <p>
+          Then, in the css styles to use a class, you start it with a period and
+          then the name of the class:
+        </p>
+        <pre><code>.my-div {
+/*styles for class my-div go here*/
+}
+</code></pre>
+        <h3 id="id-selector">ID Selector</h3>
+        <p>
+          IDs should only be given to a single element in the HTML and are the
+          most specific of the simple selectors.
+        </p>
+        <pre><code>&lt;div id="this-div"&gt;Style the div tag by applying the id "this-div" to it.&lt;/div&gt;
+</code></pre>
+        <p>
+          Then, in the css styles to use an id, you start it with a hash (#) and
+          then the name of the id:
+        </p>
+        <pre><code>#this-div { *styles for class my-div go here* }
+</code></pre>
+        <hr />
+        <h2 id="selectors">Selectors</h2>
+        <p>
+          CSS selectors tell the browser which HTML element you want to style.
+        </p>
+        <p>There are 5 types of selectors.</p>
+        <ol>
+          <li>1. Simple selectors (element name, class, or id)</li>
+        </ol>
+        <pre><code class="css">div {
+  /*styles*/
+}
+.my-div {
+  /*styles*/
+}
+#this-div {
+  /*styles*/
+}
+</code></pre>
+        <ol start="2">
+          <li>
+            2. Combination selectors (relationship between multiple elements)
+          </li>
+        </ol>
+        <pre><code class="css">.my-div p {
+  /*styles only paragraphs with a parent container with a class of my-div*/
+}
+</code></pre>
+        <ol start="3">
+          <li>3. Pseudo-class selectors (state of an element)</li>
+        </ol>
+        <pre><code class="css">a:hover {
+  /*styles the anchor link when it is hovered over*/
+  } 
+li:nth-child(even) {
+  /*styles every other list element*/
+}
+</code></pre>
+        <ol start="4">
+          <li>4. Pseudo-elements selectors (a piece of an element)</li>
+        </ol>
+        <pre><code class="css">h1::before {
+  content: "-"; 
+  /*styles before the h1 with a -*/
+  } 
+h1::after{
+  content: "-";
+  /*styles after the h1 with a -*/
+  }
+</code></pre>
+        <ol start="5">
+          <li>5. Attribute selectors (an element with an attribute)</li>
+        </ol>
+        <hr />
+        <h2 id="specificity">Specificity</h2>
+        <p>
+          If there are conflicting selectors in your CSS, the browser follows
+          some standards to choose which rule to use. This is called
+          <strong><em>specificity</em></strong
+          >.
+        </p>
+        <p>
+          There are 4 categories that define the level of specificity for
+          selectors ranging from most specific to least specific.
+        </p>
+        <ol>
+          <li>1. Inline styles</li>
+          <li>2. IDs</li>
+          <li>3. Classes, attributes, and pseudo-classes</li>
+          <li>4. Elements and pseudo-elements</li>
+        </ol>
+        <hr />
+        <h2 id="css-grid-vs-flexbox">CSS Grid vs Flexbox</h2>
+        <p>
+          Should I use Flexbox or Grid? - Both, stop thinking of them as
+          separate layout methods as if they were frameworks. Think about the
+          pattern you need for the layout. CSS Grid Layout is a two-dimensional
+          system, meaning it can handle both columns and rows, unlike flexbox
+          which is a one-dimensional system (either in a column or a row, not
+          both). Flexbox layouts are content-first and works well when
+          distributing space and aligning content. Grid is layout-first and
+          works well on large scale layouts that aren't linear. It allows you to
+          define areas and the relationship between them. If you only need to
+          define a layout as a row or a column, then you probably need flexbox.
+          If you want to define a grid and fit content into it in two dimensions
+          — you need the grid.
+        </p>
+        <h3 id="resources">Resources</h3>
+        <h4 id="flexbox">Flexbox</h4>
+        <p>
+          <a href="https://flexbox.io/">What the FLEXBOX?! by Wes Bos</a
+          ><br /><br />
+          <a href="https://flexboxfroggy.com/">Flexbox Froggy</a><br /><br />
+          <a href="http://www.flexboxdefense.com/">Flexbox Defense</a
+          ><br /><br />
+          <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
+            >A Complete Guide to Flexbox by CSS Tricks</a
+          >
+        </p>
+        <h4 id="grid">Grid</h4>
+        <p>
+          <a href="https://cssgrid.io/">CSS Grid by Wes Bos</a><br /><br />
+          <a href="https://cssgridgarden.com/">CSS Grid Garden</a><br /><br />
+          <a href="https://gridbyexample.com/"
+            >Grid by Example by Rachel Andrew</a
+          ><br /><br />
+          <a href="https://css-tricks.com/snippets/css/complete-guide-grid/"
+            >A Complete Guide to Grid by CSS Tricks</a
+          >
+        </p>
+      </main>
+    </div>
+    <footer>
+      <a
+        href="https://www.linkedin.com/in/brittney-postma-868928178/"
+        rel="noreferrer"
+        target="_blank"
+        class="links"
+      >
+        <span class="fa fa-linkedin fa-2x"></span>
+      </a>
+      <a
+        href="https://twitter.com/brittneypostma"
+        rel="noreferrer"
+        target="_blank"
+        class="links"
+      >
+        <span class="fa fa-twitter fa-2x"></span>
+      </a>
+      <a href="https://www.bdesigned.dev/" rel="noreferrer" target="_blank">
+        <img
+          src="https://www.bdesigned.dev/favicon-32x32.png"
+          alt="bDesigned logo"
+          style="height: 30px; position: relative; top: 3px;"
+        />
+      </a>
+      <a
+        href="https://github.com/brittneypostma"
+        rel="noreferrer"
+        target="_blank"
+        class="links"
+      >
+        <span class="fa fa-github-alt fa-2x"></span>
+      </a>
+      <a
+        href="https://www.youtube.com/channel/UCyvOaBoW3Jti69U4Gw1ci9Q?view_as=subscriber"
+        rel="noreferrer"
+        target="_blank"
+        class="links"
+      >
+        <span class="fa fa-youtube-play fa-2x"></span>
+      </a>
+    </footer>
+  </body>
+</html>
