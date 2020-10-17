@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>12 Column Layouts</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wrapper span">
+      <h1 class="header">Span them out</h1>
+      <div class="box col1-5">Four columns</div>
+      <div class="box col5-9">Four columns</div>
+      <div class="box col9-13">Four columns</div>
+      <div class="box col1-9">Eight columns</div>
+      <div class="box col9-13">Four columns</div>
+      <div class="box col1-4">Three columns</div>
+      <div class="box col4-7">Three columns</div>
+      <div class="box col7-10">Three columns</div>
+      <div class="box col10-13">Three columns</div>
+      <div class="box col1-7">Six columns</div>
+      <div class="box col7-13">Six columns</div>
+    </div>
+
+    <div class="wrapper fit">
+      <header><h1>As many as fit</h1></header>
+
+      <div class="box col1-5">A</div>
+      <div class="box col5-9">B</div>
+      <div class="box tall-box col9-13">C</div>
+      <div class="box col1-5">D</div>
+      <div class="box col5-9">E</div>
+      <div class="box col1-5">F</div>
+      <div class="box taller-box col5-9">G</div>
+      <div class="box taller-box col9-13">H</div>
+      <div class="box col1-5">I</div>
+      <div class="box col1-5">J</div>
+
+      <footer class="footer">My footer</footer>
+    </div>
+
+    <div class="wrapper align">
+      <h1 class="full row1">Aligning the grid</h1>
+      <div class="box full">One</div>
+      <div class="box col1-7 row3-5">Two</div>
+      <div class="box col7-13 row3-4">Three</div>
+      <div class="box col7-10 row4-5">Four</div>
+      <div class="box col10-13 row4-5">Five</div>
+    </div>
+
+    <div class="wrapper place">
+      <h1 class="full row1">All over the place</h1>
+      <div class="box col1-5 row2-4">
+        Four columns <br />
+        Two rows
+      </div>
+      <div class="box col5-9 row2-5">
+        Four columns <br />
+        Three rows
+      </div>
+      <div class="box col9-13">Four columns</div>
+      <div class="box col9-13">Four columns</div>
+      <div class="box col1-4">Three columns</div>
+      <div class="box col4-5">One</div>
+      <div class="box col9-10">One</div>
+      <div class="box col10-13">Three columns</div>
+      <div class="box col1-7">Six columns</div>
+      <div class="box col7-13">Six columns</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,137 @@
+/* Reset, import, and variables */
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+:root {
+  --green: #78b63c;
+  --pink: #e30e76;
+  --white: #f4fbf1;
+  --gray: #efefef;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  list-style: none;
+  text-decoration: none;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  line-height: 1.5;
+  min-height: 100vh;
+  font-family: 'Raleway', 'HelveticaNeue', 'Helvetica Neue', 'Helvetica',
+    'Arial', sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  padding: 1rem;
+  max-width: 1256px;
+  margin: 0 auto;
+  display: grid;
+  gap: 2.5rem;
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+}
+
+.box,
+footer {
+  text-align: center;
+  border-radius: 0.25rem;
+  color: var(--white);
+  display: grid;
+  place-items: center;
+}
+
+.box:nth-child(odd),
+footer {
+  background: var(--green);
+}
+
+.box:nth-child(even) {
+  background: var(--pink);
+}
+
+.wrapper {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(0, 1fr);
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    grid-template-columns: repeat(12, [col] 1fr);
+  }
+  .header,
+  header,
+  footer,
+  .full {
+    grid-column: col / span 12;
+  }
+
+  .tall-box {
+    grid-row: span 2;
+  }
+
+  .taller-box {
+    grid-row: span 3;
+  }
+
+  .col1-5 {
+    grid-column: 1 / 5;
+  }
+  .col5-9 {
+    grid-column: 5 / 9;
+  }
+  .col9-13 {
+    grid-column: 9 / -1;
+  }
+  .col1-9 {
+    grid-column: 1 / 9;
+  }
+  .col1-4 {
+    grid-column: 1 / 4;
+  }
+  .col4-5 {
+    grid-column: 4 / 5;
+  }
+  .col4-7 {
+    grid-column: 4 / 7;
+  }
+  .col7-10 {
+    grid-column: 7 / 10;
+  }
+  .col9-10 {
+    grid-column: 9 / 10;
+  }
+  .col10-13 {
+    grid-column: 10 / -1;
+  }
+  .col1-7 {
+    grid-column: 1 / 7;
+  }
+  .col7-13 {
+    grid-column: 7 / 13;
+  }
+  .col10-13 {
+    grid-column: 10 / 13;
+  }
+
+  .row1 {
+    grid-row: 1 / 2;
+  }
+  .row3-5 {
+    grid-row: 3 / 5;
+  }
+  .row2-4 {
+    grid-row: 2 / 4;
+  }
+  .row2-5 {
+    grid-row: 2 / 5;
+  }
+}
