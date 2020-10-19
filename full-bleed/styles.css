@@ -1,3 +1,4 @@
+/* reset and base styles */
 :root {
   --green: #78b63c;
   --pink: #e30e76;
@@ -10,36 +11,68 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  border: none;
   list-style: none;
   text-decoration: none;
 }
 
 html,
 body {
-  overflow-x: hidden;
   scroll-behavior: smooth;
   line-height: 1.5;
   min-height: 100%;
   font-family: 'Roboto', sans-serif;
   text-rendering: optimizeLegibility;
+  /*   color: var(--white); */
+}
+
+a {
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--pink);
+}
+
+img {
+  max-height: 50vh;
+  object-fit: cover;
 }
 
 header,
 footer {
-  text-align: center;
+  background: var(--green);
+}
+
+header,
+footer {
   color: var(--white);
   background: var(--green);
   padding: 1rem;
 }
 
+header,
+header > nav > ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+footer,
+footer > nav > ul {
+  display: flex;
+  place-content: center;
+  gap: 1rem;
+}
+
 main {
   display: grid;
-  grid-template-columns: 1fr min(65ch, 100%) 1fr;
+  grid-template-columns: auto min(1200px, 100%) auto;
 }
 
 main > * {
-  padding: 1rem;
+  padding: 1rem 2.5rem;
   background: var(--pink);
   color: var(--white);
   grid-column: 2;
@@ -51,4 +84,34 @@ main > * {
   grid-column: 1/-1;
   padding: 0;
   margin: 0 auto;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center; */
+}
+
+.cards > section {
+  background: var(--green);
+}
+
+.fake-image {
+  height: 200px;
+  background: var(--white);
+  color: gray;
+  display: grid;
+  place-items: center;
+}
+
+.cards h3 {
+  margin-bottom: 1rem;
+}
+
+.card-text {
+  padding: 1rem;
 }
