@@ -1,0 +1,80 @@
+:root {
+  --green: #78b63c;
+  --pink: #e30e76;
+  --white: #f4fbf1;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  line-height: 1.5;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  display: grid;
+  gap: 2.5rem;
+  text-align: center;
+}
+
+article {
+  display: grid;
+  gap: 1rem;
+}
+
+/* ram */
+.container {
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.card {
+  display: grid;
+  place-items: center;
+  min-height: 200px;
+}
+
+.card:nth-child(odd) {
+  background: var(--green);
+}
+
+.card:nth-child(even) {
+  background: var(--pink);
+}
+
+/* fill vs fit */
+
+.box {
+  width: 200px;
+  height: 200px;
+  background: var(--green);
+}
+
+.box:nth-child(odd) {
+  background: var(--pink);
+}
+
+.fit {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.fill {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}

@@ -9,10 +9,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  border: none;
-  font: inherit;
-  list-style: none;
-  text-decoration: none;
 }
 
 html,
@@ -43,14 +39,6 @@ h2 {
   border-radius: 0.25rem;
 }
 
-.vw {
-  font-size: 1vw;
-}
-
-.vh {
-  font-size: 2vh;
-}
-
 .ch {
   font-size: 2ch;
 }
@@ -73,4 +61,28 @@ h2 {
 
 .rem > p {
   font-size: 1rem;
+}
+
+.vw {
+  font-size: 1vw;
+}
+
+.vh {
+  font-size: 2vh;
+}
+
+.vmin {
+  font-size: 2vmin;
+}
+
+.vmax {
+  font-size: 2vmax;
+}
+
+.percent {
+  font-size: 125%;
+}
+
+.percent > p {
+  font-size: 150%;
 }

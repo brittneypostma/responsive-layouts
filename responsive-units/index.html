@@ -7,35 +7,22 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <article class="card vw">
-      <h2>Viewport Width</h2>
-      <p>
-        I will change based on the width of the viewport.
-      </p>
-    </article>
-    <article class="card vh">
-      <h2>Viewport Height</h2>
-      <p>
-        I will change based on the height of the viewport.
-      </p>
-    </article>
     <article class="card ch">
       <h2>CH</h2>
       <p>
-        I will not change in size, I am the size of 2 characters.
+        I am the size of 2 of the "0" character in the current font.
       </p>
     </article>
     <article class="card ex">
       <h2>EX</h2>
       <p>
-        I will not change in size, I am the size of 2 of the letter x in the
-        current font.
+        I am the size of 2 of the letter x in the current font.
       </p>
     </article>
     <article class="card em">
       <h2>EM</h2>
       <p>
-        I will change based on my parent container's font size.
+        I will change relative to my parent container's font size.
       </p>
     </article>
     <article class="card rem">
@@ -43,6 +30,36 @@
       <p>
         I will always be based off the root font size and will not change unless
         told to.
+      </p>
+    </article>
+    <article class="card vw">
+      <h2>VW</h2>
+      <p>
+        I am 2% of the current viewport's width.
+      </p>
+    </article>
+    <article class="card vh">
+      <h2>VH</h2>
+      <p>
+        I am 2% of the current viewport's height.
+      </p>
+    </article>
+    <article class="card vmin">
+      <h2>VMIN</h2>
+      <p>
+        I am 2% of the viewport's smaller dimension.
+      </p>
+    </article>
+    <article class="card vmax">
+      <h2>VMAX</h2>
+      <p>
+        I am 2% of the viewport's larger dimension.
+      </p>
+    </article>
+    <article class="card percent">
+      <h2>Percent</h2>
+      <p>
+        I will change relative to the parent's font size.
       </p>
     </article>
   </body>

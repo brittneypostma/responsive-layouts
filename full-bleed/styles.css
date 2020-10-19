@@ -68,7 +68,7 @@ footer > nav > ul {
 
 main {
   display: grid;
-  grid-template-columns: auto min(1200px, 100%) auto;
+  grid-template-columns: auto min(65ch, 100%) auto;
 }
 
 main > * {
@@ -87,6 +87,13 @@ main > * {
 }
 
 .cards {
+  background: var(--green);
+}
+
+.cards-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
@@ -96,8 +103,8 @@ main > * {
   align-items: center; */
 }
 
-.cards > section {
-  background: var(--green);
+.cards-wrapper > section {
+  background: var(--pink);
 }
 
 .fake-image {
