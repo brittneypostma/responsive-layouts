@@ -42,27 +42,28 @@ body {
 
   /*  tracks  */
   /* grid-template-columns: auto 200px auto; */
-  /* grid-template-columns: repeat(12, 1fr);  */
+
+  /*  By default, a grid item cannot be smaller than the content inside of it or than the size defined. This can cause overflow that can be fixed with minmax(0, 1fr) or a min-width: 0 on the item. */
+
+  /* grid-template-columns: 1fr 2fr 1fr 2fr 1fr 2fr; */
+  /* grid-template-columns: repeat(12, 1fr); */
   /* grid-template-rows: 200px 200px 200px; */
   /* grid-auto-flow: dense; */
 
   /*  gap or gutters  */
-  /*   gap: 1rem; */
-
-  /*  By default, a grid item cannot be smaller than the content inside of it or than the size defined. This can cause overflow that can be fixed with minmax(0, 1fr) or a min-width: 0 on the item. */
+  /* gap: 1rem; */
 
   /*  placement
 justify - main/inline axis
         - horizontal in grid and flex row
 align - cross/block axis
       - vertical in grid and flex row 
-
 content - places grid tracks 
         - start, end, center, stretch, space-around, space-between, space-evenly
-
 items - applies self to all children
       - start, end, center, stretch
   */
+
   /* justify-content: space-around; */
   /* justify-items: center; */
   /* align-items: center; */
@@ -70,38 +71,32 @@ items - applies self to all children
 
   /*   place - shorthand for align justify
         - items, content, self */
+
+  /* place-items: center; */
+  /* place-content: center; */
 }
 
-/* 
-.col12 {
+/* .col12 {
   grid-column: span 12;
-  display: grid;
-  place-items: center;
 }
 
-
- .col6 {
+.col6 {
   grid-column: span 6;
-  display: grid;
-  place-items: center;
 }
-
 
 .col4 {
   grid-column: span 4;
-  display: grid;
-  place-items: center;
 }
-
 
 .col2 {
   grid-column: span 2;
-  display: grid;
-  place-items: center;
-}
-  */
-
-/* .grid > * {
-  display: grid;
-  place-items: center;
 } */
+
+.grid > * {
+  display: grid;
+  /* place-items: center; */
+  /* grid-column: 2; */
+  /* align-self: center; */
+  /* justify-self: center; */
+  /* place-self: center; */
+}
